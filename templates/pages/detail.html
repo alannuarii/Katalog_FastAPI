@@ -1,0 +1,29 @@
+{% extends 'layout/base.html' %} {% block title %} <title>{{title}}</title> {% endblock %} {% block content %}
+<main id="katalog-details" class="katalog-details">
+    <div class="container" >
+      <div class="row justify-content-between gy-4 mt-4">
+        <div class="col-lg-7 offset-1 ">
+          <img src="/static/img/laptop/{{data.image}}" class="img-fluid" alt="">
+        </div>
+
+        <div class="col-lg-4">
+          <div class="katalog-info">
+            <h3>Product Information</h3>
+            <ul>
+              <li><strong>Product Name</strong> <span>{{data.nama_produk}}</span></li>
+              <li><strong>Brand</strong> <span>{{data.brand}}</span></li>
+              <li><strong>Release Year</strong> <span>{{data.tahun_rilis}}</span></li>
+              <li><strong>Processor</strong> <span>{{data.prosesor}}</span></li>
+              <li><strong>Storange</strong> <span>{{data.penyimpanan}}</span></li>
+              <li><strong>RAM</strong> <span>{{data.ram}}</span></li>
+              <li><strong>Screen Size</strong> <span>{{data.ukuran_layar}}</span></li>
+              <li><strong>Price</strong> <span>{{data.harga}}</span></li>
+              <li><button class="btn btn-visit align-self-start" data-bs-toggle="modal" data-bs-target="#modal-cart"><i class="bi-cart-plus-fill me-2"></i>Checkout</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% include 'includes/modal-cart.html'   %}
+{% include 'includes/footer.html' %} {% endblock %}
